@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-link to="/Home" ><el-button type="primary" class="nav-btn">图书管理</el-button></router-link>
+    <router-link to="/About"><el-button type="success" class="nav-btn">默认按钮</el-button></router-link>
+    <router-view></router-view>
+<!--   <Home :cmovies="movies" :cmsg="message"></Home>-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Home from "./view/home";
 export default {
   name: 'App',
+  data(){
+    return {
+    
+    }
+  },
   components: {
-    HelloWorld
+    Home
   }
 }
 </script>
 
-<style>
+<style scoped>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+text-align: center;
 }
+  .nav-btn{
+    margin-right: 10px;
+  }
 </style>
